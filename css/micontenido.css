@@ -1,0 +1,29 @@
+body {
+    background-color: white;
+    color: teal;
+}
+.contenido {
+    height: 400px;
+    background-color: rgb(232, 169, 158);
+}
+.apunte-image {
+    background-color: turquoise;
+    text-align: center;
+    padding: 40px;
+}
+#image1 {
+    background-color: violet;
+    text-align: center;
+    padding: 40px;
+}
+.contacto-form {
+    padding: 40px;
+}
+label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: rgb(84, 99, 55);
+}
+.explicacion {
+    font-style: oblique;
+}
