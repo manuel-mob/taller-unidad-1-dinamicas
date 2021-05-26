@@ -11,6 +11,9 @@ include("ContenidoController.php");
 
 //echo $manager->deleteInformation('apunte','45');
 
+
+
+
 /*
 
 
