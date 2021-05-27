@@ -26,8 +26,8 @@
 
   <body>
     <h1>Number guessing game</h1>
-
-    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+    <p class="mitexto"></p>
+    <p>We have selected a random number between 1 and 100. See if you can guess it in 5 turns or fewer. We'll tell you if your guess was too high or too low.</p>
 
     <div class="form">
       <label for="guessField">Enter a guess: </label>
@@ -40,7 +40,6 @@
       <p class="lastResult"></p>
       <p class="lowOrHi"></p>
     </div>
-
     <script>
 
 let randomNumber = Math.floor(Math.random() * 100) + 1;
@@ -55,7 +54,6 @@ const guessField = document.querySelector('.guessField');
 let guessCount = 1;
 let resetButton;
 
-
 function checkGuess() {
   
   let userGuess = Number(guessField.value);
@@ -69,14 +67,20 @@ function checkGuess() {
     lastResult.style.backgroundColor = 'green';
     lowOrHi.textContent = '';
     setGameOver();
-  } else if (guessCount === 10) {
+  } else if (guessCount === 5) {
     lastResult.textContent = '!!!Fin del juego!!!';
     setGameOver();
   } else {
     lastResult.textContent = '¡Incorrecto!';
     lastResult.style.backgroundColor = 'red';
+    
+    
     if(userGuess < randomNumber) {
-      lowOrHi.textContent = '¡El número es muy bajo!';
+        if ( (randomNumber-userGuess) < 5 ) {
+            lowOrHi.textContent = '¡El número es bajo!';
+        } else {
+            lowOrHi.textContent = '¡El número es muy bajo!';      
+        }
     } else if(userGuess > randomNumber) {
       lowOrHi.textContent = '¡El número es muy grande!';
     }
@@ -117,6 +121,7 @@ function resetGame() {
 
   randomNumber = Math.floor(Math.random() * 100) + 1;
 }
-    </script>
+
+</script>
   </body>
 </html>
